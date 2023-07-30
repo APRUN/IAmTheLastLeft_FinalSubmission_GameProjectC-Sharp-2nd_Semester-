@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7967ED7-A228-429F-B1BA-33324C7CEC07}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PacManGUI</RootNamespace>
+    <AssemblyName>PacManGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EZInput, Version=1.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EZInput.1.3.2\lib\netstandard2.0\EZInput.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameGL\Bullet.cs" />
+    <Compile Include="GameGL\CollsionDetectors.cs" />
+    <Compile Include="GameGL\Enemy.cs" />
+    <Compile Include="GameGL\Game.cs" />
+    <Compile Include="GameGL\GameCell.cs" />
+    <Compile Include="GameGL\GameDirection.cs" />
+    <Compile Include="GameGL\GameGrid.cs" />
+    <Compile Include="GameGL\GameObject.cs" />
+    <Compile Include="GameGL\GameObjectType.cs" />
+    <Compile Include="GameGL\HBullet.cs" />
+    <Compile Include="GameGL\HGhost.cs" />
+    <Compile Include="GameGL\PBullet.cs" />
+    <Compile Include="GameGL\Player.cs" />
+    <Compile Include="GameModeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameModeForm.Designer.cs">
+      <DependentUpon>GameModeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GamePlayMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GamePlayMenu.Designer.cs">
+      <DependentUpon>GamePlayMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstructionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstructionForm.Designer.cs">
+      <DependentUpon>InstructionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelSelectionForm.Designer.cs">
+      <DependentUpon>LevelSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameModeForm.resx">
+      <DependentUpon>GameModeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GamePlayMenu.resx">
+      <DependentUpon>GamePlayMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstructionForm.resx">
+      <DependentUpon>InstructionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelSelectionForm.resx">
+      <DependentUpon>LevelSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\vertical.png" />
+    <None Include="Resources\Screenshot %28129%29.png" />
+    <None Include="Resources\Screenshot %28130%29.png" />
+    <None Include="Resources\Back Arrow.png" />
+    <None Include="Resources\Menu.png" />
+    <None Include="Resources\AircraftLaserRed.png" />
+    <None Include="Resources\Spell Bullet.png" />
+    <None Include="Resources\FireWBullet.png" />
+    <None Include="Resources\WhiteAircraft.png" />
+    <None Include="Resources\TankNo8.png" />
+    <None Include="Resources\TankNo7.png" />
+    <None Include="Resources\TankNo6.png" />
+    <None Include="Resources\TankNo5.png" />
+    <None Include="Resources\TankNo4.png" />
+    <None Include="Resources\TankNo3.png" />
+    <None Include="Resources\TankNo2.png" />
+    <None Include="Resources\TankNo1.png" />
+    <None Include="Resources\pallet2png__2_-removebg-preview.png" />
+    <None Include="Resources\Pallet3png__2_-removebg-preview.png" />
+    <None Include="Resources\Rafale.png" />
+    <None Include="Resources\MyTank.png" />
+    <None Include="Resources\GreensTruck.png" />
+    <None Include="Resources\GreensTank.png" />
+    <None Include="Resources\GreensHardCar.png" />
+    <None Include="Resources\GreensCar2.png" />
+    <None Include="Resources\GreensArmouredTruck.png" />
+    <None Include="Resources\GreensArmouredCar.png" />
+    <None Include="Resources\GreeensCanon-removebg-preview.png" />
+    <None Include="Resources\f22RAPTOR-removebg-preview.png" />
+    <None Include="Resources\EditedBullet.png" />
+    <None Include="Resources\canonBullet.png" />
+    <None Include="Resources\CanonBall.png" />
+    <None Include="Resources\C1.jpg" />
+    <None Include="Resources\BulletTank-removebg-preview.png" />
+    <None Include="Resources\bullett.png" />
+    <None Include="Resources\BrownsTwoMissiles.png" />
+    <None Include="Resources\BrownsSingleMissiles.png" />
+    <None Include="Resources\BrownsOilTanker.png" />
+    <None Include="Resources\BrownsHeliTruck.png" />
+    <None Include="Resources\BrownsCar.png" />
+    <None Include="Resources\BrownsArmyTruck.png" />
+    <None Include="Resources\Brow.png" />
+    <None Include="Resources\BossUltimateTank.png" />
+    <None Include="Resources\BossUltimateFirer.png" />
+    <None Include="Resources\BossUltimateArmouredCar.png" />
+    <None Include="Resources\BossTruck.png" />
+    <None Include="Resources\BossArmouredCar2.png" />
+    <None Include="Resources\BossArmouredCar.png" />
+    <None Include="Resources\BattleGround1.jpg" />
+    <None Include="Resources\Battle2.jpg" />
+    <None Include="Resources\Battle11.jpg" />
+    <None Include="Resources\Battle1.jpg" />
+    <None Include="Resources\PalletPng.png" />
+    <None Include="Resources\pallet.png" />
+    <None Include="Resources\simplebox.png" />
+    <None Include="Resources\vertical.png" />
+    <None Include="Resources\horizontal.png" />
+    <None Include="Resources\pacman_open.png" />
+    <None Include="Resources\pacman_close.png" />
+    <None Include="Resources\ghost_red.png" />
+    <None Include="Resources\ghost_pink.png" />
+    <None Include="Resources\ghost_orange.png" />
+    <None Include="Resources\ghost_fright.png" />
+    <None Include="Resources\ghost_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
